@@ -1,0 +1,12 @@
+.blok{
+    position: relative;
+    height: 100px;
+    width: 100px;
+    color: red;
+    top: 200px;
+    left: 100px;
+    display: block;
+    border-style: solid;
+    border-width: 5px;
+    border-color: aliceblue;
+}
