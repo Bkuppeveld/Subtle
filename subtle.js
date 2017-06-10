@@ -8,7 +8,7 @@ var subtle = {
 
 
         // check if user has set different settings
-        if(typeof el.dataset.distance !== 'undefined'){
+        if (typeof el.dataset.distance !== 'undefined'){
             DISTANCE = el.dataset.distance; 
         }
 
@@ -51,7 +51,7 @@ var subtle = {
         // default settings
         var SPEED = 120;
         var DISTANCE = 5;
-        var STARTPOS = el.offsetLeft;
+        var STARTPOS = el.offsetLeft + el.style.marginLeft;
     
 
 
@@ -64,12 +64,12 @@ var subtle = {
             SPEED = el.dataset.speed; 
         }
 
-
+alert(el.offsetLeft);
         var stopPos = (parseInt(STARTPOS) + parseInt(DISTANCE));
         var pos = STARTPOS;
         var id = setInterval(frame, SPEED);   
         var direction = 'left'; 
-        
+        alert(el.offsetLeft);
         function frame() {
             if(direction == 'right'){
                 if (pos >= stopPos) {
@@ -77,7 +77,7 @@ var subtle = {
                 } 
                 else {
                         pos++;
-                   
+                   alert(el.offsetLeft);
 
                     } 
             }
@@ -88,7 +88,7 @@ var subtle = {
                 } 
                 else {
                     pos--;
-                    
+                      alert(el.offsetLeft);
 
                 }
             }
@@ -114,7 +114,7 @@ for(var i = 0; i< bouncers.length; i++) {
 
 }
 
-
+//Warning using margin on an element wil make it jump
 
 
 
