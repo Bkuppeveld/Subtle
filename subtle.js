@@ -8,11 +8,11 @@ var subtle = {
 
 
         // check if user has set different settings
-        if(el.dataset.distance != null){
+        if(typeof el.dataset.distance !== 'undefined'){
             DISTANCE = el.dataset.distance; 
         }
 
-         if(el.dataset.speed != null){
+         if(typeof el.dataset.speed !== 'undefined'){
             SPEED = el.dataset.speed; 
         }
 
@@ -52,14 +52,15 @@ var subtle = {
         var SPEED = 120;
         var DISTANCE = 5;
         var STARTPOS = el.offsetLeft;
+    
 
 
         // check if user has set different settings
-        if(el.dataset.distance != null){
+        if(typeof el.dataset.distance !== 'undefined'){
             DISTANCE = el.dataset.distance; 
         }
 
-         if(el.dataset.speed != null){
+         if(typeof el.dataset.speed !== 'undefined'){
             SPEED = el.dataset.speed; 
         }
 
@@ -67,7 +68,7 @@ var subtle = {
         var stopPos = (parseInt(STARTPOS) + parseInt(DISTANCE));
         var pos = STARTPOS;
         var id = setInterval(frame, SPEED);   
-        var direction = 'right'; 
+        var direction = 'left'; 
         
         function frame() {
             if(direction == 'right'){
@@ -76,6 +77,8 @@ var subtle = {
                 } 
                 else {
                         pos++;
+                   
+
                     } 
             }
 
@@ -85,6 +88,8 @@ var subtle = {
                 } 
                 else {
                     pos--;
+                    
+
                 }
             }
 
@@ -94,11 +99,11 @@ var subtle = {
 };
 
 
-//search by class name
+
 var wiggles = document.getElementsByClassName('subtle-wiggle');
 var bouncers = document.getElementsByClassName('subtle-bounce');
 
-//looping trough objects
+
 for(var i = 0; i< wiggles.length; i++) {
     subtle.startWiggle(wiggles[i]);
 
